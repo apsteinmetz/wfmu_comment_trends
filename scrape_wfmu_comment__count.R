@@ -88,7 +88,7 @@ show_urls <- readRDS("wfmu_show_urls.rds")
 
 # function to extract fields from a single show page
 parse_show <- function(url) {
-  Sys.sleep(pause)
+  # Sys.sleep(pause)
   doc <- safe_get_html(url)
   if (is.null(doc)) {
     return(tibble(
@@ -185,8 +185,9 @@ failure_info <- NULL
 url_subset <- show_urls
 results_list <- vector("list", length(url_subset))
 # results_list <- list()
-for (i in 1:nrow(url_subset)) {
-  print(i)
+# for (i in 1:nrow(url_subset)) {
+for (i in 1205:nrow(url_subset)) {
+  # print(i)
   url <- url_subset$show_url[i]
   dj_id <- url_subset$dj_id[i]
   res <- tryCatch(
@@ -205,20 +206,24 @@ for (i in 1:nrow(url_subset)) {
   # report progress every 10 shows
   if (i %% 10 == 0) {
     message(sprintf("Processed %d / %d shows", i, nrow(url_subset)))
+    message(res$DJ)
   }
 }
 
-comment_history <- results_list |>
-  bind_rows() |>
-  mutate(Date = as.Date(Date)) |>
-  arrange(Date)
+# convert date in results to Date type
+results_list2 <- map(results_list, ~ {
+  .x %>%
+    mutate(Date = as.Date(Date))
+})
+
+comment_history <- results_list2 |>
+  bind_rows()
 
 if (!is.null(failure_info)) {
   attr(comment_history, "failure") <- failure_info
 }
 # save comment_history
 saveRDS(comment_history, "wfmu_comment_history.rds")
-
 
 
 # plot comment counts over time
