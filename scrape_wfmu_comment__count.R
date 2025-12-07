@@ -77,13 +77,14 @@ get_show_links <- function(dj_url) {
   tibble(dj_id = dj_id, show_url = show_urls_local)
 }
 # this takes some time
-show_urls <- dj_urls |>
+# show_urls <- dj_urls |>
   map_dfr(get_show_links) |>
   distinct()
 
 # save show URLs for reference
-saveRDS(show_urls, "wfmu_show_urls.rds")
-
+# saveRDS(show_urls, "wfmu_show_urls.rds")
+# load show URLs
+show_urls <- readRDS("wfmu_show_urls.rds")
 
 # function to extract fields from a single show page
 parse_show <- function(url) {
@@ -101,10 +102,15 @@ parse_show <- function(url) {
 
   text_all <- doc %>% html_text2() %>% str_squish()
 
-  # Stream: best-effort by matching known stream_names
-  stream <- keep(known_streams, ~ str_detect(text_all, fixed(.x))) %>% first()
-  if (is.null(stream)) {
-    stream <- NA_character_
+  # Stream: best-effort by finding first occurring known stream in page text
+  pos <- map_int(known_streams, ~ {
+    loc <- str_locate(text_all, fixed(.x))
+    if (is.na(loc[1])) NA_integer_ else as.integer(loc[1])
+  })
+  stream <- if (all(is.na(pos))) {
+    NA_character_
+  } else {
+    known_streams[which.min(pos)]
   }
 
   # DJ: attempt from page <h1> or from title
@@ -175,7 +181,8 @@ parse_show <- function(url) {
 }
 
 failure_info <- NULL
-url_subset <- show_urls |> filter(dj_id == "WH")
+# url_subset <- show_urls |> filter(dj_id == "WH")
+url_subset <- show_urls
 results_list <- vector("list", length(url_subset))
 # results_list <- list()
 for (i in 1:nrow(url_subset)) {
@@ -211,6 +218,9 @@ if (!is.null(failure_info)) {
 }
 # save comment_history
 saveRDS(comment_history, "wfmu_comment_history.rds")
+
+
+
 # plot comment counts over time
 ggplot(comment_history, aes(x = Date, y = comment_count)) +
   geom_point(alpha = 0.5) +
