@@ -3,9 +3,6 @@ library(tidyverse)
 library(rvest)
 library(httr)
 library(xml2)
-library(lubridate)
-library(stringr)
-library(purrr)
 library(rlang)
 
 base_url = "https://www.wfmu.org/playlists"
@@ -78,13 +75,15 @@ get_show_links <- function(dj_url) {
 }
 # this takes some time
 # show_urls <- dj_urls |>
+# if show_urls.rds exists, load it instead of re-fetching
+if (file.exists("wfmu_show_urls.rds")) {
+  # load show URLs
+  show_urls <- readRDS("wfmu_show_urls.rds")
+} else {
   map_dfr(get_show_links) |>
-  distinct()
-
-# save show URLs for reference
-# saveRDS(show_urls, "wfmu_show_urls.rds")
-# load show URLs
-show_urls <- readRDS("wfmu_show_urls.rds")
+    distinct()
+  saveRDS(show_urls, "wfmu_show_urls.rds")
+}
 
 # function to extract fields from a single show page
 parse_show <- function(url) {
@@ -103,10 +102,13 @@ parse_show <- function(url) {
   text_all <- doc %>% html_text2() %>% str_squish()
 
   # Stream: best-effort by finding first occurring known stream in page text
-  pos <- map_int(known_streams, ~ {
-    loc <- str_locate(text_all, fixed(.x))
-    if (is.na(loc[1])) NA_integer_ else as.integer(loc[1])
-  })
+  pos <- map_int(
+    known_streams,
+    ~ {
+      loc <- str_locate(text_all, fixed(.x))
+      if (is.na(loc[1])) NA_integer_ else as.integer(loc[1])
+    }
+  )
   stream <- if (all(is.na(pos))) {
     NA_character_
   } else {
@@ -186,7 +188,7 @@ url_subset <- show_urls
 results_list <- vector("list", length(url_subset))
 # results_list <- list()
 # for (i in 1:nrow(url_subset)) {
-for (i in 1205:nrow(url_subset)) {
+for (i in 60522:nrow(url_subset)) {
   # print(i)
   url <- url_subset$show_url[i]
   dj_id <- url_subset$dj_id[i]
@@ -210,11 +212,17 @@ for (i in 1205:nrow(url_subset)) {
   }
 }
 
+# remove NULL entries from results_list
+results_list <- compact(results_list)
+
 # convert date in results to Date type
-results_list2 <- map(results_list, ~ {
-  .x %>%
-    mutate(Date = as.Date(Date))
-})
+results_list2 <- map(
+  results_list,
+  ~ {
+    .x %>%
+      mutate(Date = as.Date(Date))
+  }
+)
 
 comment_history <- results_list2 |>
   bind_rows()
@@ -223,10 +231,20 @@ if (!is.null(failure_info)) {
   attr(comment_history, "failure") <- failure_info
 }
 # save comment_history
-saveRDS(comment_history, "wfmu_comment_history.rds")
+save(comment_history, file = "wfmu_comment_history.rdata")
+
+comment_history2 <- comment_history
+
+bind_rows(comment_history, comment_history2) |>
+  distinct() |>
+  arrange(Date) |>
+  saveRDS("wfmu_comment_history.rds")
+
+comment_history <- readRDS("wfmu_comment_history.rds")
 
 
 # plot comment counts over time
+
 ggplot(comment_history, aes(x = Date, y = comment_count)) +
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE) +
