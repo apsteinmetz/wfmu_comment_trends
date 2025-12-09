@@ -84,7 +84,7 @@ get_show_links <- function(dj_url) {
     NA_character_,
     ifelse(nchar(seg) >= 2, substr(seg, nchar(seg) - 1, nchar(seg)), seg)
   )
-  tibble(dj_id = dj_id, show_url = show_urls_local)
+  tibble(dj_id = dj_id, show_url = show_urlsl)
 }
 
 # this takes some time
@@ -238,6 +238,15 @@ comment_history <- results_list |>
 if (!is.null(failure_info)) {
   attr(comment_history, "failure") <- failure_info
 }
+
+# show dj fields include " Playlist -"" followed by a date" Remove that
+comment_history <- comment_history |>
+  mutate(
+    DJ = str_replace(DJ, "(P|p)laylist(s?).*$", "") %>% str_squish()
+  ) |>
+  filter(DJ != "")
+
+
 # save comment_history
 save(comment_history, file = "wfmu_comment_history.rdata")
 
