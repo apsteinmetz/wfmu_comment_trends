@@ -9,6 +9,7 @@ library(xml2)
 library(rlang)
 
 base_url = "https://www.wfmu.org/playlists"
+date_regex <- "\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+\\d{4}\\b"
 
 known_stream_tags <- c(
   "On WFMU's Give the Drummer Radio",
@@ -57,47 +58,103 @@ all_hrefs <- base_doc %>%
   html_attr("href") %>%
   discard(is.na) %>%
   unique()
-dj_hrefs <- all_hrefs[str_detect(all_hrefs, "^/playlists/[^/]+$")]
-dj_urls <- abs(dj_hrefs, base_url) %>%
-  unique() |>
-  # slice off first JM in AM, never comments
-  tail(-1)
 
+dj_ids <- all_hrefs[str_detect(all_hrefs, "^/playlists/[^/]+$")] |>
+  str_extract("(?<=/playlists/)[^/]+$") |>
+  unique() |>
+  # remove "JM" from list, never comments
+  discard(\(x) x == "JM")
+
+# -----------------------------------------------
 # from each DJ page gather show links that look like /playlists/<dj>/<something>
-get_show_links <- function(dj_url) {
-  doc <- safe_get_html(dj_url)
-  if (is.null(doc)) {
+get_show_links <- function(dj_id, back_playist = NULL) {
+  if (is.null(back_playlist)) {
+    dj_url <- paste0(base_url, "/", dj_id)
+  } else {
+    dj_url <- paste0(base_url, "/", back_playlist)
+  }
+  print(dj_url)
+
+  #doc <- safe_get_html(dj_url)
+  #if (is.null(doc)) {
+  #  return(tibble(dj_id = character(0), show_url = character(0)))
+  #}
+
+  doc_html <- GET(dj_url, ua, httr::timeout(30)) |>
+    content(as = "text", encoding = "UTF-8") |>
+    strsplit("<br>") |>
+    unlist()
+
+  if (is.null(doc_html)) {
     return(tibble(dj_id = character(0), show_url = character(0)))
   }
-  hrefs <- doc %>%
-    html_nodes("a") %>%
-    html_attr("href") %>%
-    discard(is.na) %>%
-    unique()
-  show_hrefs <- hrefs[str_detect(hrefs, "^/playlists/[^/]+/.+")]
-  show_urls <- abs(show_hrefs, dj_url) %>% unique()
+  # playlist_links <- html_elements(doc, "a") |>
+  #  html_attr("href")
 
-  # extract the end segment after /playlists/ and take the last two characters as the DJ id
-  seg <- str_extract(dj_url, "(?<=/playlists/)[^/]+$")
-  dj_id <- ifelse(
-    is.na(seg),
-    NA_character_,
-    ifelse(nchar(seg) >= 2, substr(seg, nchar(seg) - 1, nchar(seg)), seg)
-  )
-  tibble(dj_id = dj_id, show_url = show_urlsl)
+  #  playlist_text <- html_elements(doc, "a") |>
+  #   html_text()
+
+  if (is.null(back_playlist)) {
+    prior_years <-
+      doc_html[str_detect(
+        doc_html,
+        paste0(dj_id, "\\d{4}")
+      )] |>
+      str_extract_all(paste0(dj_id, "\\d{4}")) |>
+      unlist() |>
+      unique()
+  } else {
+    prior_years <- character(0)
+  }
+
+  items_with_dates <- doc_html[str_detect(doc_html, date_regex)]
+
+  playlist_links <- items_with_dates |>
+    map(read_html) |>
+    map(html_nodes, "a")
+
+  texts <- playlist_links |>
+    map(html_text) |>
+    unlist()
+  hrefs <- playlist_links |>
+    map(html_attr, "href") |>
+    unlist()
+  dates <- str_extract(items_with_dates, date_regex) |>
+    parse_date_time(orders = "BdY", quiet = TRUE) |>
+    as.Date()
+
+  playlist_rows <- tibble(
+    dj = dj_id,
+    text = texts,
+    show_id = str_remove(hrefs, "\\/playlists\\/")
+  ) |>
+    filter(str_detect(text, "laylist")) |>
+    select(dj, show_id) |>
+    tibble(date = dates)
+
+  if (length(prior_years) > 0) {
+    back_playlist <- map(prior_years, \(back_year) {
+      get_show_links(dj_id, back_year)
+    }) |>
+      bind_rows()
+    playlist_rows <- bind_rows(playlist_rows, back_playlist)
+  }
+  return(playlist_rows)
 }
 
-# this takes some time
-# show_urls <- dj_urls |>
+test <- get_show_links("WA")
+
 # if show_urls.rds exists, load it instead of re-fetching
 if (file.exists("wfmu_show_urls.rds")) {
   # load show URLs
   show_urls <- readRDS("wfmu_show_urls.rds")
 } else {
-  map_dfr(get_show_links) |>
+  show_urls <- dj_ids |>
+    map_dfr(get_show_links) |>
     distinct()
   saveRDS(show_urls, "wfmu_show_urls.rds")
 }
+
 
 # add show number column to show_url using number at end of URL
 show_urls <- show_urls %>%
