@@ -38,6 +38,20 @@ safe_get_html <- function(url) {
   tryCatch(read_html(res), error = function(e) NULL)
 }
 
+safe_get_html_raw <- function(url) {
+  res <- tryCatch(httr::GET(url, ua, httr::timeout(30)), error = function(e) {
+    NULL
+  })
+  if (is.null(res) || httr::http_error(res)) {
+    return(NULL)
+  }
+  res_text <- res |>
+    content(as = "text", encoding = "UTF-8") |>
+    strsplit("<br>") |>
+    unlist()
+  tryCatch(res_text, error = function(e) NULL)
+}
+
 # helper: absolute urls
 abs <- function(href, base) {
   href <- href[!is.na(href)]
@@ -67,7 +81,13 @@ dj_ids <- all_hrefs[str_detect(all_hrefs, "^/playlists/[^/]+$")] |>
 
 # -----------------------------------------------
 # from each DJ page gather show links that look like /playlists/<dj>/<something>
-get_show_links <- function(dj_id, back_playist = NULL) {
+# this should only get urls with playlist links
+get_show_links <- function(dj_id, back_playlist = NULL) {
+  empty <- tibble(
+    dj = character(0),
+    show_id = character(0),
+    date = as.Date(character(0))
+  )
   if (is.null(back_playlist)) {
     dj_url <- paste0(base_url, "/", dj_id)
   } else {
@@ -80,14 +100,13 @@ get_show_links <- function(dj_id, back_playist = NULL) {
   #  return(tibble(dj_id = character(0), show_url = character(0)))
   #}
 
-  doc_html <- GET(dj_url, ua, httr::timeout(30)) |>
-    content(as = "text", encoding = "UTF-8") |>
-    strsplit("<br>") |>
-    unlist()
+  doc_html <- safe_get_html_raw(dj_url)
+  doc <- safe_get_html(dj_url)
 
   if (is.null(doc_html)) {
-    return(tibble(dj_id = character(0), show_url = character(0)))
+    return(empty)
   }
+
   # playlist_links <- html_elements(doc, "a") |>
   #  html_attr("href")
 
@@ -109,7 +128,23 @@ get_show_links <- function(dj_id, back_playist = NULL) {
 
   items_with_dates <- doc_html[str_detect(doc_html, date_regex)]
 
-  playlist_links <- items_with_dates |>
+  # hopefully this captures where the playlist link is indicated but the word does not appear elsewhere in the html
+  items_with_dates_and_playlist <- items_with_dates[str_detect(
+    items_with_dates,
+    " (P|p)laylist"
+  )]
+
+  # return if nothing found
+  if (length(items_with_dates_and_playlist) == 0) {
+    return(empty)
+  }
+
+  # remove NAs
+  items_with_dates_and_playlist <- items_with_dates_and_playlist[
+    !is.na(items_with_dates_and_playlist)
+  ]
+
+  playlist_links <- items_with_dates_and_playlist |>
     map(read_html) |>
     map(html_nodes, "a")
 
@@ -119,7 +154,8 @@ get_show_links <- function(dj_id, back_playist = NULL) {
   hrefs <- playlist_links |>
     map(html_attr, "href") |>
     unlist()
-  dates <- str_extract(items_with_dates, date_regex) |>
+
+  dates <- str_extract(items_with_dates_and_playlist, date_regex) |>
     parse_date_time(orders = "BdY", quiet = TRUE) |>
     as.Date()
 
@@ -128,7 +164,7 @@ get_show_links <- function(dj_id, back_playist = NULL) {
     text = texts,
     show_id = str_remove(hrefs, "\\/playlists\\/")
   ) |>
-    filter(str_detect(text, "laylist")) |>
+    filter(str_detect(text, paste0("laylist"))) |>
     select(dj, show_id) |>
     tibble(date = dates)
 
@@ -140,9 +176,11 @@ get_show_links <- function(dj_id, back_playist = NULL) {
     playlist_rows <- bind_rows(playlist_rows, back_playlist)
   }
   return(playlist_rows)
-}
 
-test <- get_show_links("WA")
+  test <- get_show_links("WM")
+}
+# TEST
+test <- dj_ids |> sample(size = 10) |> map_dfr(get_show_links)
 
 # if show_urls.rds exists, load it instead of re-fetching
 if (file.exists("wfmu_show_urls.rds")) {
@@ -154,7 +192,6 @@ if (file.exists("wfmu_show_urls.rds")) {
     distinct()
   saveRDS(show_urls, "wfmu_show_urls.rds")
 }
-
 
 # add show number column to show_url using number at end of URL
 show_urls <- show_urls %>%
