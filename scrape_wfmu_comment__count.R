@@ -7,7 +7,7 @@ library(rvest)
 library(httr)
 library(xml2)
 library(rlang)
-
+source("func_get_show_links.R")
 base_url = "https://www.wfmu.org/playlists"
 date_regex <- "\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+\\d{4}\\b"
 
@@ -180,7 +180,7 @@ get_show_links <- function(dj_id, back_playlist = NULL) {
   test <- get_show_links("WM")
 }
 # TEST
-test <- dj_ids |> sample(size = 10) |> map_dfr(get_show_links)
+# test <- dj_ids |> sample(size = 10) |> map_dfr(get_show_links_2)
 
 # if show_urls.rds exists, load it instead of re-fetching
 if (file.exists("wfmu_show_urls.rds")) {
@@ -188,7 +188,7 @@ if (file.exists("wfmu_show_urls.rds")) {
   show_urls <- readRDS("wfmu_show_urls.rds")
 } else {
   show_urls <- dj_ids |>
-    map_dfr(get_show_links) |>
+    map_dfr(get_show_links_2) |>
     distinct()
   saveRDS(show_urls, "wfmu_show_urls.rds")
 }
