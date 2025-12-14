@@ -1,0 +1,26 @@
+{
+    "id": "B6422D53",
+    "path": "~/R Projects/wfmu_comment_trends/scrape_wfmu_comment__count.R",
+    "project_path": "scrape_wfmu_comment__count.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1765645401274.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Sourcet2s4stuqnxoz",
+        "cursorPosition": "158,0",
+        "scrollLine": "93"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1765669396,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1765669396,
+    "read_only": false,
+    "read_only_alternatives": []
+}
