@@ -7,8 +7,9 @@ library(rvest)
 library(httr)
 library(xml2)
 library(rlang)
-
+source("func_get_show_links.R")
 base_url = "https://www.wfmu.org/playlists"
+date_regex <- "\\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+\\d{4}\\b"
 
 known_stream_tags <- c(
   "On WFMU's Give the Drummer Radio",
@@ -37,6 +38,20 @@ safe_get_html <- function(url) {
   tryCatch(read_html(res), error = function(e) NULL)
 }
 
+safe_get_html_raw <- function(url) {
+  res <- tryCatch(httr::GET(url, ua, httr::timeout(30)), error = function(e) {
+    NULL
+  })
+  if (is.null(res) || httr::http_error(res)) {
+    return(NULL)
+  }
+  res_text <- res |>
+    content(as = "text", encoding = "UTF-8") |>
+    strsplit("<br>") |>
+    unlist()
+  tryCatch(res_text, error = function(e) NULL)
+}
+
 # helper: absolute urls
 abs <- function(href, base) {
   href <- href[!is.na(href)]
@@ -57,44 +72,26 @@ all_hrefs <- base_doc %>%
   html_attr("href") %>%
   discard(is.na) %>%
   unique()
-dj_hrefs <- all_hrefs[str_detect(all_hrefs, "^/playlists/[^/]+$")]
-dj_urls <- abs(dj_hrefs, base_url) %>%
+
+dj_ids <- all_hrefs[str_detect(all_hrefs, "^/playlists/[^/]+$")] |>
+  str_extract("(?<=/playlists/)[^/]+$") |>
   unique() |>
-  # slice off first JM in AM, never comments
-  tail(-1)
+  # remove "JM" from list, never comments
+  discard(\(x) x == "JM")
 
+# -----------------------------------------------
 # from each DJ page gather show links that look like /playlists/<dj>/<something>
-get_show_links <- function(dj_url) {
-  doc <- safe_get_html(dj_url)
-  if (is.null(doc)) {
-    return(tibble(dj_id = character(0), show_url = character(0)))
-  }
-  hrefs <- doc %>%
-    html_nodes("a") %>%
-    html_attr("href") %>%
-    discard(is.na) %>%
-    unique()
-  show_hrefs <- hrefs[str_detect(hrefs, "^/playlists/[^/]+/.+")]
-  show_urls <- abs(show_hrefs, dj_url) %>% unique()
+# this should only get urls with playlist links
+# TEST
+# test <- dj_ids |> sample(size = 10) |> map_dfr(get_show_links_2)
 
-  # extract the end segment after /playlists/ and take the last two characters as the DJ id
-  seg <- str_extract(dj_url, "(?<=/playlists/)[^/]+$")
-  dj_id <- ifelse(
-    is.na(seg),
-    NA_character_,
-    ifelse(nchar(seg) >= 2, substr(seg, nchar(seg) - 1, nchar(seg)), seg)
-  )
-  tibble(dj_id = dj_id, show_url = show_urls_local)
-}
-
-# this takes some time
-# show_urls <- dj_urls |>
 # if show_urls.rds exists, load it instead of re-fetching
 if (file.exists("wfmu_show_urls.rds")) {
   # load show URLs
   show_urls <- readRDS("wfmu_show_urls.rds")
 } else {
-  map_dfr(get_show_links) |>
+  show_urls <- dj_ids |>
+    map_dfr(get_show_links_2) |>
     distinct()
   saveRDS(show_urls, "wfmu_show_urls.rds")
 }
@@ -238,6 +235,15 @@ comment_history <- results_list |>
 if (!is.null(failure_info)) {
   attr(comment_history, "failure") <- failure_info
 }
+
+# show dj fields include " Playlist -"" followed by a date" Remove that
+comment_history <- comment_history |>
+  mutate(
+    DJ = str_replace(DJ, "(P|p)laylist(s?).*$", "") %>% str_squish()
+  ) |>
+  filter(DJ != "")
+
+
 # save comment_history
 save(comment_history, file = "wfmu_comment_history.rdata")
 
