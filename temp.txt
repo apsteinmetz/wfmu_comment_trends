@@ -1,0 +1,787 @@
+KDBFav.initialize({"myurl":"http:\/\/wfmu.org\/playlists\/SB","login":"\/auth.php?a=login&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2FSB","register":"\/auth.php?a=register&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2FSB","profile_favs":"\/auth.php?a=update_profile&panel_id=favorites&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2FSB","fav_icon_clicked":"\/auth.php?a=fav_icon_clicked&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2FSB","user_favs_base":"\/user_favs.php","song_page_base":"\/song.php","controller":"\/favcon.php","fav_unset_icon":"\/Gfx\/star_empty_2.png","fav_set_icon":"\/Gfx\/star_favorited_2.png","fav_busy_icon":"\/Gfx\/star_empty_spin.gif"},"playlist index","SB");
+Login/Logout | Register | Please enable inline frames!
+function kdb_login_iframeResize(id){ var size_element; var e; try { size_element=document.getElementById(id).contentWindow.document.getElementById("kdb_login_text_size"); document.getElementById(id).height= (size_element.clientHeight + 2) + "px"; document.getElementById(id).width= (size_element.clientWidth + 17) + "px"; } catch (e) {} }
+Pseu Braun: Playlists and Archives
+
+That is you can't you know tune in but it's all wrong. (Visit homepage.)
+
+On WFMU | 91.1, 90.1, 91.9 FM & wfmu.org WFMU LIVE Audio Streams (Get help): Pop-up | 128k AAC | 128k MP3 | 32k MP3
+CLICK HERE FOR Pseu's Thing With A Hook SUMMER POP PROGRAM PLAYLISTS!!!
+
+June 1, 2015: SHEDS | Listen: Pop-up player!
+
+April 28, 2015: See the playlist | Listen: Pop-up player!
+
+April 20, 2015: See the playlist | Listen: Pop-up player!
+
+April 8, 2015: See the playlist | Listen: Pop-up player!
+
+January 19, 2015: See the playlist | Listen: Pop-up player!
+
+January 13, 2015: Fill in for Aerial View | See the playlist | Listen: Pop-up player!
+
+December 1, 2014: See the playlist | Listen: Pop-up player!
+
+June 10, 2011: See the playlist | Listen: Pop-up player!
+
+June 3, 2011: See the playlist | Listen: Pop-up player!
+
+May 27, 2011: No show today due to the Primavera Sound Festival broadcast live from Barcelona.
+
+May 20, 2011: Dave Mandl filled in.
+
+May 13, 2011: See the playlist | Listen: Pop-up player!
+
+May 6, 2011: See the playlist | Listen: Pop-up player!
+
+April 29, 2011: See the playlist | Listen: Pop-up player!
+
+April 22, 2011: See the playlist | Listen: Pop-up player!
+
+April 15, 2011: See the playlist | Listen: Pop-up player!
+
+April 8, 2011: See the playlist | Listen: Pop-up player!
+
+April 1, 2011: See the playlist | Listen: Pop-up player!
+
+March 25, 2011: See the playlist | Listen: Pop-up player!
+
+March 11, 2011: MARATHON - PLEDGE 1-800-989-9368 | See the playlist | Listen: Pop-up player!
+
+March 4, 2011: Yo le Tengo play requests live for the 2011 WFMU Marathon. Archive unavailable.
+
+February 25, 2011: See the playlist | Listen: Pop-up player!
+
+February 18, 2011: See the playlist | Listen: Pop-up player!
+
+February 11, 2011: See the playlist | Listen: Pop-up player!
+
+February 4, 2011: See the playlist | Listen: Pop-up player!
+
+January 28, 2011: See the playlist | Listen: Pop-up player!
+
+January 21, 2011: See the playlist | Listen: Pop-up player!
+
+January 14, 2011: See the playlist | Listen: Pop-up player!
+
+January 7, 2011: Noah filled in.
+
+December 31, 2010: See the playlist | Listen: Pop-up player!
+
+December 24, 2010: See the playlist | Listen: Pop-up player!
+
+December 17, 2010: See the playlist | Listen: Pop-up player!
+
+December 10, 2010: See the playlist | Listen: Pop-up player!
+
+December 3, 2010: See the playlist | Listen: Pop-up player!
+
+November 26, 2010: See the playlist | Listen: Pop-up player!
+
+November 19, 2010: See the playlist | Listen: Pop-up player!
+
+November 12, 2010: See the playlist | Listen: Pop-up player!
+
+November 5, 2010: See the playlist | Listen: Pop-up player!
+
+October 29, 2010: See the playlist | Listen: Pop-up player!
+
+October 22, 2010: 45 foot records with Joe Voltage the Dumpster Dive Record King! | See the playlist | Listen: Pop-up player!
+
+October 15, 2010: See the playlist | Listen: Pop-up player!
+
+October 8, 2010: See the playlist | Listen: Pop-up player!
+
+July 23, 2010: | Listen: Pop-up player!
+
+July 2, 2010: See the playlist | Listen: Pop-up player!
+
+June 11, 2010: See the playlist | Listen: Pop-up player!
+
+June 4, 2010: See the playlist | Listen: Pop-up player!
+
+May 28, 2010: No show today due to a live broadcast from the Primavera Festival.
+
+May 21, 2010: See the playlist | Listen: Pop-up player!
+
+May 14, 2010: See the playlist | Listen: Pop-up player!
+
+May 7, 2010: See the playlist | Listen: Pop-up player!
+
+April 30, 2010: See the playlist | Listen: Pop-up player!
+
+April 23, 2010: See the playlist | Listen: Pop-up player!
+
+April 16, 2010: See the playlist | Listen: Pop-up player!
+
+April 9, 2010: See the playlist | Listen: Pop-up player!
+
+April 2, 2010: See the playlist | Listen: Pop-up player!
+
+March 26, 2010: See the playlist | Listen: Pop-up player!
+
+March 12, 2010: pledge, Pledge...PLEDGE PLEDGE PLEDGE!! WORK IT with PSEU BRAUN & MONICA!! | See the playlist | Listen: Pop-up player!
+
+February 26, 2010: Mike Lupica filled in.
+
+February 19, 2010: See the playlist | Listen: Pop-up player!
+
+February 12, 2010: See the playlist | Listen: Pop-up player!
+
+February 5, 2010: Therese filled in.
+
+January 29, 2010: See the playlist | Listen: Pop-up player!
+
+January 22, 2010: See the playlist | Listen: Pop-up player!
+
+January 15, 2010: See the playlist | Listen: Pop-up player!
+
+January 8, 2010: See the playlist | Listen: Pop-up player!
+
+January 1, 2010: See the playlist | Listen: Pop-up player!
+
+December 25, 2009: See the playlist | Listen: Pop-up player!
+
+December 23, 2009: Fill-in for Seven Second Delay | Listen: Pop-up player!
+
+December 18, 2009: See the playlist | Listen: Pop-up player!
+
+December 11, 2009: See the playlist | Listen: Pop-up player!
+
+December 4, 2009: Dave Mandl filled in.
+
+November 27, 2009: See the playlist | Listen: Pop-up player!
+
+November 20, 2009: See the playlist | Listen: Pop-up player!
+
+November 13, 2009: See the playlist | Listen: Pop-up player!
+
+November 6, 2009: See the playlist | Listen: Pop-up player!
+
+October 30, 2009: See the playlist | Listen: Pop-up player!
+
+October 23, 2009: See the playlist | Listen: Pop-up player!
+
+October 16, 2009: See the playlist | Listen: Pop-up player!
+
+June 19, 2009: See the playlist | Listen: Pop-up player!
+
+June 12, 2009: See the playlist | Listen: Pop-up player!
+
+June 5, 2009: See the playlist | Listen: Pop-up player!
+
+May 29, 2009: No show due to the Primavera Sound Fest in Barcelona which aired live tonight
+
+May 22, 2009: Pseu hosts Sexlab with William Berger and Mark Allen. | See the playlist | Listen: Pop-up player!
+
+May 15, 2009: See the playlist | Listen: Pop-up player!
+
+May 8, 2009: See the playlist | Listen: Pop-up player!
+
+May 1, 2009: William Berger filled in.
+
+April 24, 2009: SPECIAL GUESTS - Jon Davies, Rob Angello & Steve DeVito of The Secret Syde | See the playlist | Listen: Pop-up player!
+
+April 17, 2009: See the playlist | Listen: Pop-up player!
+
+April 10, 2009: See the playlist | Listen: Pop-up player!
+
+April 3, 2009: See the playlist | Listen: Pop-up player!
+
+March 27, 2009: See the playlist | Listen: Pop-up player!
+
+March 20, 2009: No show tonight because of the 2009 WFMU at SXSW Show.
+
+March 13, 2009: Week 2 of 2009 Marathon with co-host Gaylord and special guests Yo La Tengo. No Archive available.
+
+March 6, 2009: Week 1 of the 2009 WFMU Marathon with co-host Kenny G | See the playlist | Listen: Pop-up player!
+
+February 27, 2009: See the playlist | Listen: Pop-up player!
+
+February 20, 2009: See the playlist | Listen: Pop-up player!
+
+February 13, 2009: William Berger filled in.
+
+February 6, 2009: See the playlist | Listen: Pop-up player!
+
+January 30, 2009: See the playlist | Listen: Pop-up player!
+
+January 23, 2009: See the playlist | Listen: Pop-up player!
+
+January 16, 2009: See the playlist | Listen: Pop-up player!
+
+January 9, 2009: See the playlist | Listen: Pop-up player!
+
+January 2, 2009: See the playlist | Listen: Pop-up player!
+
+December 26, 2008: See the playlist | Listen: Pop-up player!
+
+December 19, 2008: See the playlist | Listen: Pop-up player!
+
+December 12, 2008: See the playlist | Listen: Pop-up player!
+
+December 5, 2008: See the playlist | Listen: Pop-up player!
+
+November 28, 2008: William Berger filled in.
+
+November 21, 2008: See the playlist | Listen: Pop-up player!
+
+November 14, 2008: See the playlist | Listen: Pop-up player!
+
+November 7, 2008: See the playlist | Listen: Pop-up player!
+
+October 31, 2008: See the playlist | Listen: Pop-up player!
+
+October 24, 2008: See the playlist | Listen: Pop-up player!
+
+October 17, 2008: See the playlist | Listen: Pop-up player!
+
+October 10, 2008: See the playlist | Listen: Pop-up player!
+
+June 13, 2008: See the playlist | Listen: Pop-up player!
+
+June 6, 2008: See the playlist | Listen: Pop-up player!
+
+May 30, 2008: See the playlist | Listen: Pop-up player!
+
+May 23, 2008: See the playlist | Listen: Pop-up player!
+
+May 16, 2008: See the playlist | Listen: Pop-up player!
+
+May 9, 2008: See the playlist | Listen: Pop-up player!
+
+May 2, 2008: See the playlist | Listen: Pop-up player!
+
+April 25, 2008: See the playlist | Listen: Pop-up player!
+
+April 18, 2008: See the playlist | Listen: Pop-up player!
+
+April 11, 2008: See the playlist | Listen: Pop-up player!
+
+April 4, 2008: See the playlist | Listen: Pop-up player!
+
+March 28, 2008: See the playlist | Listen: Pop-up player!
+
+March 21, 2008: See the playlist | Listen: Pop-up player!
+
+March 14, 2008: The WFMU SXSW Live Broadcast took over this slot tonight
+
+March 7, 2008: See the playlist | Listen: Pop-up player!
+
+February 29, 2008: 2008 WFMU MARATHON HOLLA with PSEU & GAYLORD | See the playlist | Listen: Pop-up player!
+
+February 22, 2008: See the playlist | Listen: Pop-up player!
+
+February 15, 2008: See the playlist | Listen: Pop-up player!
+
+February 8, 2008: Monica filled in.
+
+February 1, 2008: See the playlist | Listen: RealAudio
+
+January 25, 2008: SPECIAL: WACK McCARTNEY -- A quizzical journey through highly questionable Solo Beatles filler tracks | See the playlist | Listen: Pop-up player!
+
+January 18, 2008: See the playlist | Listen: Pop-up player!
+
+January 11, 2008: Monica filled in.
+
+January 4, 2008: See the playlist | Listen: Pop-up player!
+
+December 28, 2007: See the playlist | Listen: Pop-up player!
+
+December 21, 2007: See the playlist | Listen: Pop-up player!
+
+December 14, 2007: See the playlist | Listen: Pop-up player!
+
+December 7, 2007: See the playlist | Listen: Pop-up player!
+
+November 30, 2007: See the playlist | Listen: Pop-up player!
+
+November 23, 2007: See the playlist | Listen: Pop-up player!
+
+November 16, 2007: See the playlist | Listen: Pop-up player!
+
+November 9, 2007: See the playlist | Listen: Pop-up player!
+
+November 2, 2007: See the playlist | Listen: Pop-up player!
+
+October 26, 2007: See the playlist | Listen: Pop-up player!
+
+October 19, 2007: See the playlist | Listen: Pop-up player!
+
+October 12, 2007: See the playlist | Listen: Pop-up player!
+
+August 31, 2007: See the playlist | Listen: Pop-up player!
+
+July 27, 2007: See the playlist | Listen: Pop-up player!
+
+June 1, 2007: See the playlist | Listen: Pop-up player!
+
+May 25, 2007: See the playlist | Listen: Pop-up player!
+
+May 18, 2007: See the playlist | Listen: Pop-up player!
+
+May 11, 2007: See the playlist | Listen: Pop-up player!
+
+May 4, 2007: The Return of Crispin Glover! | See the playlist | Listen: Pop-up player!
+
+April 27, 2007: See the playlist | Listen: Pop-up player!
+
+April 20, 2007: See the playlist | Listen: Pop-up player!
+
+April 13, 2007: See the playlist | Listen: Pop-up player!
+
+April 6, 2007: See the playlist | Listen: Pop-up player!
+
+March 30, 2007: See the playlist | Listen: Pop-up player!
+
+March 23, 2007: See the playlist | Listen: Pop-up player!
+
+March 16, 2007: Week Two of the 2007 Marathon with co-host Gaylord Fields and special guests Yo La Tengo. No archive available.
+
+March 9, 2007: See the playlist | Listen: Pop-up player!
+
+March 2, 2007: Includes interview with Perry Grebin, director of "American Cannibal" | See the playlist | Listen: Pop-up player!
+
+February 23, 2007: See the playlist | Listen: Pop-up player!
+
+February 16, 2007: Dan Bryk stops by Pseu's show for performance and pop chatter. | See the playlist | Listen: Pop-up player!
+
+February 9, 2007: See the playlist | Listen: Pop-up player!
+
+February 2, 2007: See the playlist | Listen: Pop-up player!
+
+January 26, 2007: Acapulco Rodriguez filled in.
+
+January 19, 2007: See the playlist | Listen: Pop-up player!
+
+January 12, 2007: See the playlist | Listen: Pop-up player!
+
+January 5, 2007: See the playlist | Listen: Pop-up player!
+
+December 29, 2006: See the playlist | Listen: Pop-up player!
+
+December 22, 2006: See the playlist | Listen: Pop-up player!
+
+December 15, 2006: See the playlist | Listen: Pop-up player!
+
+December 8, 2006: See the playlist | Listen: Pop-up player!
+
+December 1, 2006: See the playlist | Listen: Pop-up player!
+
+November 24, 2006: See the playlist | Listen: Pop-up player!
+
+November 17, 2006: See the playlist | Listen: Pop-up player!
+
+November 10, 2006: See the playlist | Listen: Pop-up player!
+
+November 3, 2006: See the playlist | Listen: Pop-up player!
+
+October 27, 2006: See the playlist | Listen: Pop-up player!
+
+October 20, 2006: See the playlist | Listen: Pop-up player!
+
+October 13, 2006: See the playlist | Listen: Pop-up player!
+
+June 16, 2006: See the playlist | Listen: Pop-up player!
+
+June 9, 2006: See the playlist | Listen: Pop-up player!
+
+June 2, 2006: See the playlist | Listen: Pop-up player!
+
+May 26, 2006: See the playlist | Listen: Pop-up player!
+
+May 19, 2006: See the playlist | Listen: Pop-up player!
+
+May 12, 2006: Tamar filled in.
+
+May 5, 2006: See the playlist | Listen: Pop-up player!
+
+April 28, 2006: See the playlist | Listen: Pop-up player!
+
+April 21, 2006: See the playlist | Listen: Pop-up player!
+
+April 14, 2006: See the playlist | Listen: Pop-up player!
+
+April 7, 2006: See the playlist | Listen: Pop-up player!
+
+March 31, 2006: Billy Jam filled in.
+
+March 24, 2006: See the playlist | Listen: Pop-up player!
+
+March 17, 2006: See the playlist | Listen: Pop-up player!
+
+March 10, 2006: Week two of the 2006 Marathon with co-host Mark Allen. | See the playlist | Listen: Pop-up player!
+
+March 3, 2006: Week one of the 2006 Marathon with co-host Rex. | See the playlist | Listen: Pop-up player!
+
+February 24, 2006: See the playlist | Listen: Pop-up player!
+
+February 17, 2006: See the playlist | Listen: Pop-up player!
+
+February 10, 2006: See the playlist | Listen: Pop-up player!
+
+February 3, 2006: See the playlist | Listen: Pop-up player!
+
+January 27, 2006: See the playlist | Listen: Pop-up player!
+
+January 20, 2006: See the playlist | Listen: Pop-up player!
+
+January 13, 2006: See the playlist | Listen: Pop-up player!
+
+January 6, 2006: FAILED ACCUPLAYLIST EXERCISE No. 1 | See the playlist | Listen: Pop-up player!
+
+December 30, 2005: Black Ops filled in
+
+December 23, 2005: Dan Mackta filled in
+
+December 16, 2005: John Allen filled in.
+
+December 9, 2005: See the playlist | Listen: Pop-up player!
+
+December 2, 2005: See the playlist | Listen: Pop-up player!
+
+November 25, 2005: See the playlist | Listen: Pop-up player!
+
+November 18, 2005: See the playlist | Listen: Pop-up player!
+
+November 11, 2005: See the playlist | Listen: Pop-up player!
+
+November 4, 2005: Woo-hoop-dee-dooo | See the playlist | Listen: Pop-up player!
+
+October 28, 2005: See the playlist | Listen: Pop-up player!
+
+October 21, 2005: @#%#@%@!! | See the playlist | Listen: Pop-up player!
+
+October 14, 2005: Shallow Pleasures | See the playlist | Listen: Pop-up player!
+
+October 7, 2005: ACCU-HELL | See the playlist | Listen: Pop-up player!
+
+September 30, 2005: Thing with a Hook with special guest Doug Gillard | Listen: RealAudio
+
+June 10, 2005: Last Freeform show before Thing With A Hook begins anew! | See the playlist | Listen: Pop-up player!
+
+June 3, 2005: The Green Goddess from Catalina | See the playlist | Listen: Pop-up player!
+
+May 27, 2005: Those Two Retarded Brats | See the playlist | Listen: Pop-up player!
+
+May 20, 2005: Flesh Curtain | See the playlist | Listen: Pop-up player!
+
+May 13, 2005: Cable Blindfolded Line-Up | See the playlist | Listen: Pop-up player!
+
+May 6, 2005: Lokey Dokey | See the playlist | Listen: Pop-up player!
+
+April 29, 2005: Exploring Podcast Culture | See the playlist | Listen: Pop-up player!
+
+April 22, 2005: Who's The Lettuce Head Now? | See the playlist | Listen: Pop-up player!
+
+April 15, 2005: Oh The Horror, featuring Diane Kamikaze | See the playlist | Listen: Pop-up player!
+
+April 8, 2005: Frank O'Toole filled in.
+
+April 1, 2005: The Cosmic Cowboy filled in.
+
+March 25, 2005: Face-Lifted Feminists for Life | See the playlist | Listen: Pop-up player!
+
+March 18, 2005: 2005 WFMU Marathon with co-host Gaylord Fields | Listen: Pop-up player!
+
+March 11, 2005: Special guest Crispin Glover - 2005 WFMU Marathon | Listen: Pop-up player!
+Hear Pseu Braun's 3-hour long live interview with Crispin Glover during WFMU's 2005 fund-raising marathon. Crispin Glover talks about his film What Is It? as well as his books and recordings, and answers pledgers' questions about his life and work.
+
+March 4, 2005: Radio Blah Blah | See the playlist | Listen: Pop-up player!
+
+February 25, 2005: Blue Light Tooth White | See the playlist | Listen: Pop-up player!
+
+February 18, 2005: Rose From the Dead | See the playlist | Listen: Pop-up player!
+
+February 11, 2005: I'm Gettin' Mah Fluids On | See the playlist | Listen: Pop-up player!
+
+February 4, 2005: Special Guest: Andrew Horn, writer/director of "The Nomi Song" | See the playlist | Listen: Pop-up player!
+
+January 29, 2005: Put Your Hand In the Hand That Was In the Warm Jar of Mayonnaise | See the playlist | Listen: Pop-up player!
+
+January 21, 2005: Bloggo the Blogosphere | See the playlist | Listen: Pop-up player!
+
+January 14, 2005: Recognyze: The New DJ Chair | See the playlist | Listen: Pop-up player!
+
+December 31, 2004: NYE '04 | See the playlist | Listen: Pop-up player!
+
+December 24, 2004: Xmas With Pseu n' Mo featuring interview with WPRB's Jon Solomon live from his annual Xmas marathon! | See the playlist | Listen: Pop-up player!
+
+December 17, 2004: A Christmas Shepp-tacular with Ed Shepp! | See the playlist | Listen: Pop-up player!
+
+December 10, 2004: Roid's the Rage! | See the playlist | Listen: Pop-up player!
+
+December 3, 2004: Yancy filled in.
+
+November 26, 2004: Stripped: The Radio Show | See the playlist | Listen: Pop-up player!
+
+November 19, 2004: Show Namebot #41119 | See the playlist | Listen: Pop-up player!
+
+November 12, 2004: Bums Reunited | See the playlist | Listen: Pop-up player!
+
+November 5, 2004: "On your left the view is not very inspiring, but on your right..." | See the playlist | Listen: Pop-up player!
+
+October 29, 2004: Fun N' Larfs With Special Guest Ivan from Laibach! | See the playlist | Listen: Pop-up player!
+
+October 22, 2004: Bad News Indeed | See the playlist | Listen: Pop-up player!
+
+October 15, 2004: Yancy filled in.
+
+October 8, 2004: We Are The Gummi Bears | See the playlist | Listen: Pop-up player!
+
+June 25, 2004: Maryann filled in.
+
+June 11, 2004: Neurotrash | See the playlist | Listen: Pop-up player!
+
+June 4, 2004: A Short Explanation | See the playlist | Listen: Pop-up player!
+
+May 21, 2004: With very special guest Pal Den! | See the playlist | Listen: Pop-up player!
+
+May 14, 2004: Things to Do In Greece When You're Psychotic | See the playlist | Listen: Pop-up player!
+
+May 7, 2004: Crushing Expectations With The Same Old Thing | See the playlist | Listen: Pop-up player!
+
+April 30, 2004: | Listen: Pop-up player!
+
+April 23, 2004: Pretty Pretty? | See the playlist | Listen: Pop-up player!
+
+April 16, 2004: It really is "...gettin' ta be RE-GOD-DAMN-DICK-YOU-LUSS" | See the playlist | Listen: Pop-up player! April 9, 2004: well, gee I-I--dunno.... | See the playlist | Listen: Pop-up player! April 2, 2004: from [email protected]: Why don't you sing "Let's stop talking shit on air"? | See the playlist | Listen: Pop-up player!
+March 26, 2004: Free to Be, Unmarathonly | See the playlist | Listen: Pop-up player!
+
+March 19, 2004: 2nd week of the 2004 Marathon with Co-Host Vicki Bennett of People Like Us | Listen: Pop-up player!
+
+March 12, 2004: Week 1 of the 2004 Marathon with Co-Host Trouble | Listen: Pop-up player!
+
+March 5, 2004: Runnin' Behind the Lag Wagon | See the playlist | Listen: Pop-up player!
+
+February 27, 2004: Suffering the Tyrants | See the playlist | Listen: Pop-up player!
+
+February 20, 2004: Ed Shepp comes alive! | See the playlist | Listen: Pop-up player!
+
+February 13, 2004: "...that's what the world has in store for you..." | See the playlist | Listen: Pop-up player!
+
+February 6, 2004: Britney Spears and Brainbombs in the same set, oh...god... | See the playlist | Listen: Pop-up player!
+
+January 30, 2004: Vacation in a Wedding Cake | See the playlist | Listen: Pop-up player!
+
+January 23, 2004: The Carb Conspiracy | See the playlist | Listen: Pop-up player!
+
+January 16, 2004: Yancy filled in.
+
+January 9, 2004: Snortin' Records | See the playlist | Listen: Pop-up player!
+
+January 2, 2004: DVDo and DVDon't | See the playlist | Listen: Pop-up player!
+
+December 26, 2003: No so hyper... | See the playlist | Listen: Pop-up player!
+
+December 19, 2003: Leave Room To Edit | See the playlist | Listen: Pop-up player!
+
+December 12, 2003: Introducing Irina, Polish Disco Sensation | See the playlist | Listen: Pop-up player!
+
+December 5, 2003: OCDJ filled in.
+
+November 28, 2003: All Aboard the Gravy Boat | See the playlist | Listen: Pop-up player!
+
+November 21, 2003: Target: Holiday Consumption | See the playlist | Listen: Pop-up player!
+
+November 14, 2003: Paris Hilton tape screening party | See the playlist | Listen: Pop-up player!
+
+November 7, 2003: Critical Response To The Art Product (C.R.A.P.) | See the playlist | Listen: Pop-up player!
+
+October 31, 2003: Blood, curdled. | See the playlist | Listen: Pop-up player!
+
+October 24, 2003: Special Guests - The Brian Jonestown Massacre | See the playlist | Listen: Pop-up player!
+
+October 17, 2003: The Old No-Broadband Excuse for A Late Playlist | See the playlist | Listen: Pop-up player!
+
+October 10, 2003: Special guest Terry Manning with Max Wisley and Bill Phillips of Cargoe | See the playlist | Listen: Pop-up player!
+
+October 1, 2003: Bullet Garbage Can Through My Heart | See the playlist | Listen: Pop-up player!
+
+September 25, 2003: 3 Less Hours of Community Service | See the playlist | Listen:
+
+September 17, 2003: David Frost, Fred Travalena, Irwin Chusid, Kenneth Goldsmith, Vicki Bennett, Pseu Braun | See the playlist | Listen: Pop-up player!
+
+September 9, 2003: A Bottle and Mo | See the playlist | Listen: Pop-up player!
+
+September 3, 2003: Patches of Red | See the playlist | Listen: Pop-up player!
+
+August 27, 2003: featuring The Ghost of William Hickey | See the playlist | Listen: Pop-up player!
+
+August 20, 2003: Connecting with the listener, then having to bring one down... | See the playlist | Listen: Pop-up player!
+
+August 13, 2003: Pseu n' Scott just shootin' the fish... | See the playlist | Listen: Pop-up player!
+
+August 6, 2003: Maryann filled in.
+
+July 30, 2003: Bring Me To Life, One-Armed Guy | See the playlist
+
+July 23, 2003: Can't get the Winky Dink to work. | See the playlist | Listen: Pop-up player!
+
+July 16, 2003: Diane's Kamikaze Fun Machine filled in for Pseu tonight.
+
+July 9, 2003: Sad If I Lost It | See the playlist | Listen: Pop-up player!
+
+July 2, 2003: Sloppy, like really sloppy | See the playlist | Listen: Pop-up player!
+
+June 25, 2003: The Album That Defies Re-Filing | See the playlist | Listen: Pop-up player!
+
+June 18, 2003: Oh, That Used to Be *My* Slot... | See the playlist | Listen: Pop-up player!
+
+May 1, 2003: Fill-in for Dave the Spazz | See the playlist | Listen: Pop-up player!
+
+April 22, 2003: Earth Day Special! Fill-in for Tom Scharpling | See the playlist | Listen: Pop-up player!
+
+November 25, 2002: With Suicide members Alan Vega and Martin Rev, filling in for Scott | Listen: Pop-up player!
+
+October 19, 2002: Fill-in for Tamar | Listen: Pop-up player!
+
+September 7, 2002: Fill-in for Gaylord | Listen: Pop-up player!
+
+July 20, 2002: Fill-in for the Cosmic Cowboy | Listen: Pop-up player!
+
+July 2, 2002: Another Fill-in for "The Best Show on WFMU" | Listen: Pop-up player!
+
+March 26, 2002: Fill-in for "The Best Show on WFMU" | Listen: Pop-up player!
+
+October 21, 2001: | Listen: Pop-up player!
+
+September 28, 2001: | Listen: Pop-up player!
+
+September 21, 2001: | Listen: Pop-up player!
+
+September 14, 2001: | Listen: Pop-up player!
+
+September 7, 2001: | Listen: Pop-up player!
+
+August 24, 2001: | Listen: Pop-up player!
+
+July 20, 2001: | Listen: Pop-up player!
+
+July 13, 2001: | Listen: Pop-up player!
+
+July 6, 2001: | Listen: Pop-up player!
+
+June 29, 2001: The Shins perform live on Pseu's show | Listen: Pop-up player!
+
+June 22, 2001: | Listen: Pop-up player!
+
+June 15, 2001: | Listen: Pop-up player!
+
+June 8, 2001: | Listen: Pop-up player!
+
+June 1, 2001: | Listen: Pop-up player!
+
+May 18, 2001: | Listen: Pop-up player!
+
+May 11, 2001: | Listen: Pop-up player!
+
+April 27, 2001: | Listen: Pop-up player!
+
+April 20, 2001: | Listen: Pop-up player!
+
+April 13, 2001: | Listen: Pop-up player!
+
+April 6, 2001: | Listen: Pop-up player!
+
+March 30, 2001: | Listen: Pop-up player!
+
+March 23, 2001: | Listen: Pop-up player!
+
+March 16, 2001: | Listen: Pop-up player!
+
+March 2, 2001: Guided By Voices | Listen: Pop-up player!
+
+February 23, 2001: | Listen: Pop-up player!
+
+February 9, 2001: | Listen: Pop-up player!
+
+January 26, 2001: | Listen: Pop-up player!
+
+January 19, 2001: Scratchie recording artist Dan Bryk drops by | Listen: Pop-up player!
+
+January 12, 2001: | Listen: Pop-up player!
+
+January 5, 2001: | Listen: Pop-up player!
+
+December 29, 2000: | Listen: Pop-up player!
+
+December 22, 2000: | Listen: Pop-up player!
+
+December 8, 2000: | Listen: Pop-up player!
+
+December 1, 2000: | Listen: Pop-up player!
+
+November 24, 2000: | Listen: Pop-up player!
+
+November 17, 2000: | Listen: Pop-up player!
+
+November 10, 2000: | Listen: Pop-up player!
+
+November 3, 2000: | Listen: Pop-up player!
+
+October 27, 2000: | Listen: Pop-up player!
+
+October 20, 2000: | Listen: Pop-up player!
+
+October 13, 2000: | Listen: Pop-up player!
+
+October 6, 2000: | Listen: Pop-up player!
+
+September 29, 2000: | Listen: Pop-up player!
+
+September 22, 2000: | Listen: Pop-up player!
+
+September 1, 2000: See the playlist
+
+August 28, 2000: See the playlist
+
+August 19, 2000: See the playlist
+
+July 8, 2000: Pseu's interview with Kim Fowley | Listen: Pop-up player!
+
+June 30, 2000: See the playlist
+
+June 23, 2000: See the playlist
+
+June 16, 2000: See the playlist | Listen: Pop-up player!
+
+June 9, 2000: See the playlist
+
+June 2, 2000: See the playlist
+
+May 26, 2000: See the playlist
+
+May 19, 2000: See the playlist
+
+May 15, 2000: Pseu's interview with Doug Gillard of Guided By Voices | Listen: Pop-up player!
+
+May 12, 2000: See the playlist
+
+May 5, 2000: See the playlist
+
+April 28, 2000: See the playlist
+
+April 21, 2000: See the playlist
+
+April 14, 2000: See the playlist
+
+April 7, 2000: See the playlist
+
+March 31, 2000: See the playlist
+
+March 24, 2000: See the playlist
+
+March 16, 2000: See the playlist
+
+March 9, 2000: See the playlist
+
+March 3, 2000: See the playlist
+
+
+RSS feeds for Pseu Braun: Playlists feed | MP3 archives feed | Email the Program Director | Other WFMU Playlists | All artists played by Pseu Braun | Listen on the Internet | Contact Us | Music & Programs | WFMU Home Page | Support Us | FAQ Live Audio Streams for WFMU: Pop-up | 128k AAC | 128k MP3 | 32k MP3 (More streams: [+]) (Enable Javascript to see more streams!) Give the Drummer Radio: Pop-up | 128k MP3 Rock'N'Soul Radio: Pop-up | 128k MP3 Sheena's Jungle Room: Pop-up | 128k MP3
+(C) 2025 WFMU. Generated by KenzoDB, written 2000-2025 by Ken Garson
+
+
+function highslide_attach(selector_prefix = ""){jQuery(selector_prefix + " a.highslide").attr("onclick", "return hs.expand(this)").not("[title]").attr("title", "Click to enlarge");}highslide_attach();var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-446006-1']); _gaq.push(['_trackPageview']); _gaq.push(['_trackPageLoadTime']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+To Comments!
